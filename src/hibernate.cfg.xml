@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.connection.provider_class">com.alibaba.druid.support.hibernate.DruidConnectionProvider</property>
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize">1</property>
+		<property name="minIdle">1</property>
+		<property name="maxActive">500</property>
+	
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait">10000</property>
+	
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis">60000</property>
+	
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis">30000</property>
+	
+		<property name="validationQuery">SELECT 1 from dual</property>
+		<property name="testWhileIdle">true</property>
+		<property name="testOnBorrow">false</property>
+		<property name="testOnReturn">false</property>
+	
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements">true</property>
+		<property name="maxPoolPreparedStatementPerConnectionSize">20</property>
+	
+		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+		<property name="filters">stat</property>
+		
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="driverClassName">oracle.jdbc.driver.OracleDriver</property>
+        
+        <!-- 本地测试环境-->
+        <property name="url">jdbc:oracle:thin:@192.168.1.68:1521:ORCL</property>
+        
+        <!-- 生产环境 
+        <property name="url">jdbc:oracle:thin:@8.129.167.122:1521:orcl</property>-->
+		
+        <property name="username">c##db_qds</property>
+        <property name="password">rongyixin_qds;</property>
+		
+       	
+    </session-factory>
+</hibernate-configuration>
+
+<!--生产环境C3p0配置-->
+<!-- <hibernate-configuration>
+<session-factory>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.max_size">1000</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.timeout">60</property>
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.idle_test_period">60</property>
+		<property name="hibernate.c3p0.acquire_increment">5</property>
+		<property name="hibernate.c3p0.validate">true</property>
+  		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">srtqsbp34250</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@10.26.208.190:1521:qsbp</property>
+        <property name="hibernate.connection.username">db_srt</property>
+        <property name="hibernate.default_schema">db_srt</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="javax.persistence.validation.mode">none</property>
+     	每60秒检查所有连接池中的空闲连接。Default: 0
+		<property name="idleConnectionTestPeriod">60</property>
+		最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0
+		<property name="maxIdleTime">60</property>
+		当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出
+		SQLException,如设为0则无限期等待。单位毫秒。Default: 0
+		<property name="checkoutTimeout">100</property>
+  
+ </session-factory>
+</hibernate-configuration> -->
