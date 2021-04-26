@@ -42,14 +42,16 @@ public class wxopenidcallback extends HttpServlet implements Servlet {
 		response.setContentType("text/html;charset=UTF-8");
 		String openidjumppage = (String) request.getSession().getAttribute(
 				"openidjumppage");
+		String qds = request.getParameter("qds");
+		System.out.println("callbackqds"+qds);
 		try {
 			String code = request.getParameter("code");
 			String result = "";
 			if (!StringUtils.isBlank(code)) {
 				// 获取设置
-				String appid = ConfigUtils.getProperty("wx_appid",
+				String appid = ConfigUtils.getProperty("wx_appid_"+qds,
 						"wxb64de1546c7b9e62");
-				String appsecret = ConfigUtils.getProperty("wx_app_secret",
+				String appsecret = ConfigUtils.getProperty("wx_app_secret_"+qds,
 						"0cc5f8c95b4cb7228a8eab4edceb5946");
 
 				String Url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="

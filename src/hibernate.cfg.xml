@@ -42,7 +42,7 @@
         <property name="url">jdbc:oracle:thin:@8.129.167.122:1521:orcl</property>-->
 		
         <property name="username">c##db_qds</property>
-        <property name="password">rongyixin_qds;</property>
+        <property name="password">rongyixin_qds</property>
 		
        	
     </session-factory>

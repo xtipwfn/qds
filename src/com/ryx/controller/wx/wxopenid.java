@@ -33,6 +33,7 @@ public class wxopenid extends HttpServlet implements Servlet {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		String qds = request.getParameter("qds");
 		try {
 			String scope = (String) request.getSession()
 					.getAttribute("wxscope");
@@ -46,11 +47,12 @@ public class wxopenid extends HttpServlet implements Servlet {
 			}
 			String callbackurl = request.getScheme() + "://"
 					+ request.getServerName() + request.getContextPath()
-					+ "/wxopenidcallback";
+					+ "/wxopenidcallback?qds="+qds;
+//			String callbackurl = "https://www.rongyixin.net/wxopenidcallback?qds="+qds;
 			callbackurl = URLEncoder.encode(callbackurl, "UTF-8");
 
 			// 获取设置
-			String appid = ConfigUtils.getProperty("wx_appid",
+			String appid = ConfigUtils.getProperty("wx_appid_"+qds,
 					"wxb64de1546c7b9e62");
 			String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 					+ appid

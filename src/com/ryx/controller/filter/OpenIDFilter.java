@@ -47,7 +47,7 @@ public class OpenIDFilter implements Filter {
 
 		boolean needGetOpenid = false; // 需要获取OpenID
 		List<String> needopenids = new ArrayList<String>(); // 需要获取OpenID
-		needopenids.add("/IndexServlet");
+		needopenids.add("/index");
 		needopenids.add("/ProdServlet");
 		needopenids.add("/LoginServlet");
 		needopenids.add("/RegisterServlet");
@@ -65,7 +65,7 @@ public class OpenIDFilter implements Filter {
 			filterChain.doFilter(request, response);
 			return;
 		}
-
+		
 		String openid = (String) request.getSession().getAttribute("openid");
 		String scope = "snsapi_base";
 		String user_type = check_userHeader(request);
@@ -103,7 +103,7 @@ public class OpenIDFilter implements Filter {
 				return;
 			}
 		}
-
+		String qds = request.getParameter("qds");
 //		System.out.println("调微信获取opendid");
 		if ("WX".equals(user_type)) { // 微信
 			try {
@@ -119,7 +119,7 @@ public class OpenIDFilter implements Filter {
 					request.getSession().setAttribute("openidjumppage", jumppage);
 					request.getSession().setAttribute("wxscope", scope); // scope
 					// 存入session
-					response.sendRedirect("wxopenid");
+					response.sendRedirect("wxopenid?qds="+qds);
 					return;
 				} else {
 					System.out.println("非安全回调域名，无法获取微信OpenID:" + currentURL);
@@ -130,11 +130,11 @@ public class OpenIDFilter implements Filter {
 				filterChain.doFilter(request, response);
 				return;
 			}
-			System.out.println("调微信获取opendid完成");
-			 openidcallback = (String) request.getSession().getAttribute("openidcallback");
-			 System.out.println("调微信获取opendid完成后openidcallback："+openidcallback);
-			filterChain.doFilter(request, response);
-			return;
+//			System.out.println("调微信获取opendid完成");
+//			 openidcallback = (String) request.getSession().getAttribute("openidcallback");
+//			 System.out.println("调微信获取opendid完成后openidcallback："+openidcallback);
+//			filterChain.doFilter(request, response);
+//			return;
 		}
 
 		if ("ZFB".equals(user_type)) { // 支付宝
