@@ -166,7 +166,7 @@ public class LoginServlet extends HttpServlet implements Servlet {
 			qds =  (String) request.getSession().getAttribute("qds");
 		}
 		Session session = HibernateSessionFactory.getSession();
-		String sql = " select user_uuid,xm,(select dmmc from c##db_rongyixin.t_ryx_dmb dm where dm.dm_type='用户类型' and dm.dm=t.user_type) as user_type,head_url from t_qds_user t where t.openid=? and t.QDID= ? order by lrsj desc";
+		String sql = " select user_uuid,xm,(select dmmc from c##db_rongyixin.t_ryx_dmb dm where dm.dm_type='用户类型' and dm.dm=t.user_type) as user_type,head_url from t_qds_user t where t.openid=? and t.qds= ? order by lrsj desc";
 		try {
 			SQLQuery query = session.createSQLQuery(sql);
 			query.setParameter(0, openid);

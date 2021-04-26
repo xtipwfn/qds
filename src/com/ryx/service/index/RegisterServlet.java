@@ -190,7 +190,7 @@ public class RegisterServlet extends HttpServlet implements Servlet {
 				jsonObject.put("userUuid", (String) map.get("USER_UUID"));
 			} else {// 不存在则新增
 				String uuid = UUID.randomUUID().toString().trim().replaceAll("-", "");
-				String insetrSql = "insert into t_qds_user (user_uuid,xm,phone,user_type,sj_user_uuid,zw,openid,head_url)VALUES(?,?,?,'01',?,?,?,?,?) ";
+				String insetrSql = "insert into t_qds_user (user_uuid,xm,phone,user_type,sj_user_uuid,zw,openid,head_url,qds)VALUES(?,?,?,'01',?,?,?,?,?) ";
 				Connection conn = HibernateSessionFactory.connection();
 				PreparedStatement ps = conn.prepareStatement(insetrSql);
 				ps.setString(1, uuid);
@@ -251,7 +251,7 @@ public class RegisterServlet extends HttpServlet implements Servlet {
 						param.put("url", "https://www.rongyixin.net/qds/index?action=wdtdInit");
 						param.put("data", data);
 
-						Map<String, String> reMap = WxUtil.PushWx(JSON.toJSONString(param),qds);
+//						Map<String, String> reMap = WxUtil.PushWx(JSON.toJSONString(param),qds);
 					}
 				}
 			}

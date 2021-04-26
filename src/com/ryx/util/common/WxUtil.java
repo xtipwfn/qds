@@ -69,7 +69,7 @@ public class WxUtil {
 			String access_token = "";
 			if (!needaccess_token) {
 				BaseService baseService = new BaseService();
-				String sql = "select access_token from t_qds_access_token t WHERE t.qds = :qds and and access_token is not null and  t.lrsj >SYSDATE-1/24 ORDER BY lrsj DESC ";
+				String sql = "select access_token from t_qds_access_token t WHERE t.qds = :qds and  access_token is not null and  t.lrsj >SYSDATE-1/24 ORDER BY lrsj DESC ";
 				Map param = new HashMap();
 				param.put("qds", qds);
 				List<Map> list = baseService.listBySql(sql , param);
