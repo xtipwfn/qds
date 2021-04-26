@@ -10,6 +10,15 @@
 		</style>
 	</head>
 	<body>
-		<img src="img/kf.jpg" >
+		<img id="kfImg" src="" >
 	</body>
+	<script type="text/javascript">
+		$(function(){
+			document.title = localStorage.getItem('qdsTitle');
+			var qds =localStorage.getItem('qds');
+			
+			var kfImg = localStorage.getItem('kfImg');
+			$("#kfImg").attr("src",kfImg);
+		});
+	</script>
 </html>

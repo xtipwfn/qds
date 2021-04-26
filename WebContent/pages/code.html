@@ -27,18 +27,12 @@
 	</body>
 	<script>
 		var code_type = GetArgs(window.location.search,'code_type');
-		if(code_type=="zhou"){//周经理
-			document.getElementById("code").src="img/zhou.jpg";
-		}else if(code_type=="fan"){//范经理
-			document.getElementById("code").src="img/fan.jpg";
-		}else if(code_type=="fu"){ //付经理
-			document.getElementById("code").src="img/fu.jpg";
-		}else if(code_type=="guan"){ //官
-			document.getElementById("code").src="img/kf.jpg";
-		}else if(code_type=="fjl"){ //方经理
-			document.getElementById("code").src="img/fjl.jpg";
-		}else if(code_type=="chen"){ //陈海燕
-			document.getElementById("code").src="img/chen.jpg";
-		}			
+		$(function(){
+			document.title = localStorage.getItem('qdsTitle');
+			var qds =localStorage.getItem('qds');
+			
+			var kfImg = localStorage.getItem('kfImg');
+			$("#code").attr("src",kfImg);
+		});
 	</script>
 </html>
