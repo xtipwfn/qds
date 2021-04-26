@@ -17,6 +17,9 @@ app.controller('mineController', function($scope, $route, $routeParams) {
 		var tel = localStorage.getItem('tel');
 		$("#tel").attr("href","tel://"+tel);
 		console.log(tel);
+		console.log(tel);
+		console.log(tel);
+		console.log(tel);
 		$("#kfImg").attr("src",kfImg);
 		
 		$.ajax({
