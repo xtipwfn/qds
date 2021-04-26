@@ -1,5 +1,5 @@
-//var baseUrl="../";
-var baseUrl="http://192.168.1.8:8080/qds/";
+var baseUrl="../";
+//var baseUrl="http://192.168.1.8:8080/qds/";
 
 //公用取参函数
 function GetArgs(params,paramName){
