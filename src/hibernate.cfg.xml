@@ -35,11 +35,11 @@
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
         <property name="driverClassName">oracle.jdbc.driver.OracleDriver</property>
         
-        <!-- 本地测试环境-->
-        <property name="url">jdbc:oracle:thin:@192.168.1.68:1521:ORCL</property>
+        <!-- 本地测试环境
+        <property name="url">jdbc:oracle:thin:@192.168.1.68:1521:ORCL</property>-->
         
-        <!-- 生产环境 
-        <property name="url">jdbc:oracle:thin:@8.129.167.122:1521:orcl</property>-->
+        <!-- 生产环境 -->
+        <property name="url">jdbc:oracle:thin:@8.129.167.122:1521:orcl</property>
 		
         <property name="username">c##db_qds</property>
         <property name="password">rongyixin_qds</property>

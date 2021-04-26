@@ -121,8 +121,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException 
 	 */
 	private void saveTxsq(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		String openid = (String) request.getSession().getAttribute("openid");
-		String openid = "123";
+		String openid = (String) request.getSession().getAttribute("openid");
+//		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			String je = request.getParameter("je");
@@ -201,8 +201,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException 
 	 */
 	private void queryTxmx(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		String openid = (String) request.getSession().getAttribute("openid");
-		String openid = "123";
+		String openid = (String) request.getSession().getAttribute("openid");
+//		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Session session = HibernateSessionFactory.getSession();
@@ -239,8 +239,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException
 	 */
 	private void querySrxx(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		String openid = (String) request.getSession().getAttribute("openid");
-		String openid = "123";
+		String openid = (String) request.getSession().getAttribute("openid");
+//		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Session session = HibernateSessionFactory.getSession();

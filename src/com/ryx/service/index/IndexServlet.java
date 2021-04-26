@@ -149,6 +149,7 @@ public class IndexServlet extends HttpServlet implements Servlet {
 	private void init(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String subscribe = "1";// 默认跳转
 		String openid = (String) request.getSession().getAttribute("openid");
+		System.out.println("qdsopenid="+openid);
 		String qds = request.getParameter("qds");
 		request.getSession().setAttribute("qds", qds);
 		if (qds == null || "".equals(qds)) {

@@ -161,7 +161,7 @@ public class LoginServlet extends HttpServlet implements Servlet {
 	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String openid = (String) request.getSession().getAttribute("openid");
 		String headimgurl = (String) request.getSession().getAttribute("headimgurl");
-		openid = "123";
+//		openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		String qds = request.getParameter("qds");
 		if(qds == null || "".equals(qds)){

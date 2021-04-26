@@ -508,8 +508,8 @@ public class ProdServlet extends HttpServlet implements Servlet {
 				param.put("touser", openid);
 				param.put("template_id", "iLfKzvmDR5GZaeM6BRQii86aQq6OXG0jVgZIecMhCQw");// 申请提交成功通知
 				param.put("data", data);
-				Map<String, String> pushMap = WxUtil.PushWx(JSON.toJSONString(param),qds);
-				System.out.println(pushMap.toString());
+//				Map<String, String> pushMap = WxUtil.PushWx(JSON.toJSONString(param),qds);
+//				System.out.println(pushMap.toString());
 
 				Session session = HibernateSessionFactory.getSession();
 				String sql = " select openid from t_ryx_user u where u.user_uuid in ( select sj_user_uuid from t_ryx_user t where t.openid=?) and openid is not null ";
@@ -544,7 +544,7 @@ public class ProdServlet extends HttpServlet implements Servlet {
 					param.put("touser", qdsopenid);
 					param.put("template_id", "NHFHv6yzCc3i36XrUxQm6AmRXyNhaW_eRzkaGsLkYh8");// 贷款申请成功提醒
 					param.put("data", data);
-					WxUtil.PushWx(JSON.toJSONString(param),qds);
+//					WxUtil.PushWx(JSON.toJSONString(param),qds);
 				}
 			}
 		} catch (Exception e) {
