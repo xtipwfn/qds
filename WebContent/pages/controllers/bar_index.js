@@ -96,8 +96,8 @@ app.controller('indexController', function($scope, $route, $routeParams) {
 			url: baseUrl + 'LoginServlet',
 			dataType: 'json',
 			success: function(data) {	
+				console.log("checkLogin:",data)
 				if (data.result == 'success') {					
-//					console.log("checkLogin:",data)
 					if(data.XM){						
 						$('.username').text(data.XM);
 					}					

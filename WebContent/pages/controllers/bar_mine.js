@@ -36,9 +36,9 @@ app.controller('mineController', function($scope, $route, $routeParams) {
 						$('#type').html(data.USER_TYPE);
 					}
 					if(data.HEAD_URL){
-						$(".head_url").css("src",data.HEAD_URL);
+						$('.head_url').attr("src", data.HEAD_URL);
 					}else{
-						$(".head_url").css("src","img/default.png");
+						$('.head_url').attr("src", "img/default.png");
 					}
 					localStorage.setItem('user_uuid',user_uuid);
 					localStorage.setItem('user_name',user_name);
