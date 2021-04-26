@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />
+		<link rel="stylesheet" href="css/register.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>客服</title>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.container{
+			width: 370px;
+			margin: 30px auto;
+		}
+		#code{
+			width: 100%;
+		}
+	</style>
+	<body>
+		 <div class="container">
+		 	<p/>该产品需要工作人员协助申请，请扫码联系专业客服人员。</p>
+	        <img src="" id="code" >
+        </div>
+	</body>
+	<script>
+		var code_type = GetArgs(window.location.search,'code_type');
+		if(code_type=="zhou"){//周经理
+			document.getElementById("code").src="img/zhou.jpg";
+		}else if(code_type=="fan"){//范经理
+			document.getElementById("code").src="img/fan.jpg";
+		}else if(code_type=="fu"){ //付经理
+			document.getElementById("code").src="img/fu.jpg";
+		}else if(code_type=="guan"){ //官
+			document.getElementById("code").src="img/kf.jpg";
+		}else if(code_type=="fjl"){ //方经理
+			document.getElementById("code").src="img/fjl.jpg";
+		}else if(code_type=="chen"){ //陈海燕
+			document.getElementById("code").src="img/chen.jpg";
+		}			
+	</script>
+</html>

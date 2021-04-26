@@ -1,0 +1,370 @@
+* {
+  font-family: simhei; }
+
+body {
+  background: #FFFFFF; }
+
+canvas {
+  display: block; }
+
+.bg_container {
+  z-index: 1;
+  position: relative;
+  background: linear-gradient(0deg,#fdf7f7 10%,#E9301C);
+  height: 120px;
+	   }
+.infoBox {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 10px 70px;
+  z-index: 2;
+  margin-top: -80px;
+  position: relative; }
+  .infoBox .pro_intro {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 1px 2px 13px 0px rgba(222, 222, 222, 0.53); }
+    .infoBox .pro_intro .title_top {
+      position: relative;
+      height: 35px; }
+      .infoBox .pro_intro .title_top img {
+        width: 20px;
+        float: left;
+        margin-right: 5px;
+        position: relative;
+        top: 2px; }
+      .infoBox .pro_intro .title_top .prodname {
+        font-size: 17px; }
+    .infoBox .pro_intro .flex-box {
+      display: flex; }
+      .infoBox .pro_intro .flex-box .value {
+        font-size: 18px;
+        color: #000; }
+      .infoBox .pro_intro .flex-box .title {
+        font-size: 12px;
+        color: #999999; }
+      .infoBox .pro_intro .flex-box .flex-item-ed {
+        flex-grow: 4;
+        width: 0; }
+      .infoBox .pro_intro .flex-box .flex-item-fl {
+        flex-grow: 3;
+        width: 0; }
+      .infoBox .pro_intro .flex-box .flex-item-js {
+        flex-grow: 2;
+        width: 0; }
+      .infoBox .pro_intro .flex-box .red {
+        color: #E9301C; }
+    .infoBox .pro_intro .intro_new_container {
+      background: #F7F7F7;
+      padding: 10px 10px 1px;
+      border-radius: 5px;
+      margin-top: 18px;
+      color: #666666; }
+      .infoBox .pro_intro .intro_new_container .single_intro {
+        font-size: 12px;
+        margin-bottom: 8px; }
+        .infoBox .pro_intro .intro_new_container .single_intro img {
+          width: 12px; }
+        .infoBox .pro_intro .intro_new_container .single_intro span {
+          font-size: 12px; }
+  .infoBox .pro_specify {
+	position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-top: 10px; 
+	box-shadow: 1px 2px 13px 0px rgba(222, 222, 222, 0.53);}
+    .infoBox .pro_specify .title {
+      font-size: 16px;      
+      height: 16px;
+      line-height: 16px;
+      padding-left: 6px;
+	  border-left: 3px solid #E9301C;
+      box-sizing: border-box; }
+    .infoBox .pro_specify .content {
+      font-size: 12px;
+      padding-top: 10px;
+      color: #666; }
+	.infoBox .pro_specify .guide {
+        position: absolute;
+        right: 20px;
+        top: 0px;
+        font-size: 12px;
+        color: #c4191f; 
+		line-height: 50px;}
+.bottom_fix_button_list {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 14px;
+  background: #FFFFFF;
+  z-index: 10;
+  /* box-shadow: 0px 0px 1px 0px rgba(193, 193, 193, 0.95); */
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 4% 0 0; }
+  .bottom_fix_button_list .service {
+    flex-basis: 34px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    padding-right: 8px; }
+    .bottom_fix_button_list .service img {
+      width: 30px;
+      display: block;
+      position: relative;
+      top: 2px; }
+  .bottom_fix_button_list .ljtg, .bottom_fix_button_list .ljsq {
+    flex-grow: 1;
+    width: 0;
+    border: 1px solid #E9301C;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    border-radius: 5px; }
+  .bottom_fix_button_list .ljtg {
+    color: #FFF;
+    background: linear-gradient(90deg, #FE4B17 0%, #D60403 100%);
+    margin-right: 10px; }
+  .bottom_fix_button_list .ljsq {
+    color: #E9301C; }
+
+.saas_button_list {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  background: #c4191f;
+  color: #FFFFFF;
+  display: none;
+  display: flex; }
+  .saas_button_list div {
+    flex-grow: 1;
+    text-align: center; }
+  .saas_button_list .saasljsq {
+    border-right: 1px solid #F2F2F2; }
+
+.askInfoMask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99; }
+  .askInfoMask .innerForm {
+    width: 90%;
+    background: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 3px;
+    box-sizing: border-box; }
+    .askInfoMask .innerForm .title {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background: #F2F2F2;
+      text-align: center;
+      font-size: 16px; }
+    .askInfoMask .innerForm .formZone {
+      padding: 25px 20px; }
+    .askInfoMask .innerForm .inputBox {
+      width: 100%;
+      height: 40px;
+      background: #F6F6F6;
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+      position: relative;
+      margin-bottom: 15px; }
+      .askInfoMask .innerForm .inputBox .inputIcon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 11px; }
+      .askInfoMask .innerForm .inputBox input {
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        padding-left: 28px;
+        background: transparent;
+        color: #151515;
+        position: relative;
+        z-index: 2; }
+      .askInfoMask .innerForm .inputBox .hoverButton {
+        width: 100px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #4d98ec;
+        font-size: 14px;
+        z-index: 3;
+        background: #F6F6F6; }
+        .askInfoMask .innerForm .inputBox .hoverButton span {
+          display: inline-block;
+          height: 30px;
+          background: #CCC;
+          position: absolute;
+          left: 0px;
+          top: 5px;
+          width: 1px; }
+      .askInfoMask .innerForm .inputBox .hoverButton:active {
+        background: #E5E5E5; }
+    .askInfoMask .innerForm .warning {
+      font-size: 12px;
+      position: relative;
+      top: -10px;
+      color: red; }
+  .askInfoMask .buttonBox {
+    text-align: center;
+    position: relative;
+    top: -18px; }
+    .askInfoMask .buttonBox button {
+      display: inline-block;
+      width: 90px;
+      height: 32px;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      outline: none; }
+    .askInfoMask .buttonBox .submit {
+      margin-right: 10px;
+      background: #c4191f; }
+
+#loading img {
+  width: 30px; }
+
+.zonemask {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  z-index: 999;
+  left: 0px;
+  right: 0px;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.3); }
+  .zonemask ul {
+    position: absolute;
+    bottom: 0px;
+    width: 100%; }
+    .zonemask ul li {
+      transition: all 1s;
+      background: #FFFFFF;
+      width: 100%;
+      height: 46px;
+      line-height: 46px;
+      border-top: 1px solid #F2F2F2;
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden; }
+
+.newZonemask {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  z-index: 99;
+  left: 0px;
+  right: 0px;
+  background: transparent;
+  background: #FFFFFF;
+  overflow-y: auto; }
+  .newZonemask h4 {
+    font-size: 15px;
+    padding: 10px; }
+  .newZonemask ul li {
+    background: #F6F6F6;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    max-width: 140px;
+    text-align: center;
+    border-radius: 5px; }
+  .newZonemask .selZone {
+    padding: 0 10px; }
+  .newZonemask .hotZone ul li {
+    width: 23%;
+    float: left;
+    margin-right: 2.6%;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 1%;
+    box-sizing: border-box; }
+  .newZonemask .hotZone ul li:nth-child(4n) {
+    margin-right: 0; }
+  .newZonemask .otherZone ul {
+    width: 100%; }
+    .newZonemask .otherZone ul li {
+      width: 100%;
+      height: 46px;
+      line-height: 46px;
+      background: #FFFFFF;
+      text-align: left;
+      text-indent: 10px;
+      padding-left: 5px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #E5E5E5;
+      max-width: inherit;
+      border-radius: 0; }
+    .newZonemask .otherZone ul li:first-child {
+      border-top: 1px solid #E5E5E5; }
+    .newZonemask .otherZone ul li:active {
+      background: #F6F6F6; }
+  .newZonemask .liActive {
+    background: #c4191f;
+    color: #FFFFFF; }
+  .newZonemask .line {
+    width: 100%;
+    height: 1px;
+    background: #d5d5d5;
+    transform: scaleY(0.5);
+    margin: 15px 0px;
+    clear: both;
+    padding-left: 10px;
+    box-sizing: border-box; }
+
+.share_tips_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99; }
+  .share_tips_mask .imgbox {
+    text-align: right;
+    padding: 10px 15px 0 0; }
+    .share_tips_mask .imgbox img {
+      width: 100px; }
+  .share_tips_mask .textbox {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 2px; }
+  .share_tips_mask #qrcode {
+    padding: 5px;
+    background: #fff;
+    display: inline-block;
+    margin: 10px auto; }

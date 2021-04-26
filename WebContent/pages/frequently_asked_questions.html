@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="controller">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>常见问题</title>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/global.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/angularjs.min-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/frequently_asked_questions.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		
+	<style type="text/css">
+		body{
+			line-height:inherit;
+		}
+		.questions_info{
+			font-size: 15px;
+			margin: 10px;
+		}
+		.question_box{
+			padding: 10px 10px;
+			background: #FFFFFF;			
+			border-radius: 20px;
+			margin-bottom: 10px;
+		}
+		.question_icon{
+			flex-basis: 20px;
+			width: 20px;
+			height: 20px;
+			background: #f9783b;
+			color: #FFFFFF;
+			border-radius: 3px;
+			text-align: center;
+			font-weight: bold;
+		}
+		.question{
+			flex:1;
+			font-weight: bold;
+			padding-left: 8px;
+			width: 90%;
+		}
+		
+		.answer_icon{
+			flex-basis: 20px;
+			width: 20px;
+			height: 20px;
+			background: #20d0a7;
+			color: #FFFFFF;
+			border-radius: 3px;
+			text-align: center;
+			font-weight: bold;
+		}
+		.answer{
+			flex:1;
+			font-size: 13px;
+			color: #666;
+			padding-left: 8px;
+			width: 90%;
+		}
+		.Q_info{
+			display: flex;
+		}
+		.A_info{
+			display: flex;
+		}
+		.clear{
+			height: 15px;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="questions_info">			
+			<div class="question_box" ng-repeat="item in list">
+				<div class="Q_info">					
+					<div class="question_icon">问</div>
+					<div class="question">{{item.QUESTION}}</div>
+				</div>
+				<div class="clear"></div>
+				<div class="A_info">					
+					<div class="answer_icon">答</div>
+					<div class="answer">{{item.ANSWER}}</div>
+				</div>
+			</div>	
+			
+		</div>
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+</html>

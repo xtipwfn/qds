@@ -1,0 +1,197 @@
+body{				
+	background: rgb(243,246,251);
+	font-size: 14px;
+}
+p {
+    font-size: 12px;
+}
+.mine_container{
+	width:100%
+}
+.mine_container h4{
+	margin: 20px;
+	font-size: 16px;
+}
+.input-search-container{
+	width:90%;
+	margin:20px auto 10px;
+	height: 30px;
+	box-sizing:border-box;
+	border-radius:10px;
+	overflow:hidden;
+	padding:0 80px 0 30px;
+	position:relative;
+	background: #fff;
+}
+.input-search-container input{
+	width:100%;
+	height:100%;
+	border:none;
+	outline:none;
+	font-size:14px;
+	color: #999999;
+}
+.input-search-container img{
+	width:18px;
+	position:absolute;
+	top:50%;
+	left:24px;
+	transform:translateX(-50%) translateY(-50%);
+	z-index:2
+}
+.input-search-container button{
+	width: 70px;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	color:#fff;
+	background:rgb(250,80,80);
+	border:none;
+	letter-spacing:2px;
+	z-index:2;
+	outline:none;
+	font-size:14px;
+}
+
+.top_info{
+	height: 50px;
+	margin: 0px 22px;
+	position: relative;
+	background: rgb(254,243,241);
+	border-radius: 30px 20px 20px 30px;
+}
+.top_info .username{
+	position: absolute;
+	left: 60px;
+	top: 7px;
+	font-weight: bold;
+}
+.top_info .phone{
+	position: absolute;
+	left: 60px;
+	top: 27px;
+	font-size: 14px;
+}
+.top_img{
+	height: 50px;
+	width: 50px;
+}
+.top_img img{
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+}
+.top_info .wxIcon{
+	position: absolute;
+	width: 35px;
+	right: 18px;
+	top: 5px;
+}
+.team_info{
+	display: flex;
+	margin: 0px 20px;
+	color: #FFFFFF;
+	background: rgb(255,115,91);	
+	padding: 10px;
+	border-radius: 10px 10px 0px 0px;
+}
+.team_info p{
+	color: #FFFFFF;
+	font-size: 12px;
+	margin-bottom:5px;
+	margin-top: 5px;
+}
+.team_info .team_left{
+	flex: 1;
+	color: #FFFFFF;
+}
+.team_info .team_right{
+	flex: 1;
+}
+.team_subor{
+	background: #fff;
+	margin: 0px 20px;
+	padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+.team_subor .subor_from .user_info{
+	height: 50px;
+	position: relative;
+	border-radius: 30px 20px 20px 30px;
+}
+.team_subor .subor_from .user_info .username{
+	position: absolute;
+	left: 50px;
+	top: 0px;
+	font-weight: bold;
+}
+.team_subor .subor_from .user_info .phone{
+	position: absolute;
+	left: 50px;
+	top: 23px;
+	font-size: 14px;
+}
+.team_subor .subor_from .user_info .top_img{
+	height: 40px;
+	width: 40px;
+}
+.team_subor .subor_from .user_info .top_img .td_headUrl{
+	width: 40px;
+	height: 40px;
+	border-radius: 30px;
+}
+.team_subor .subor_from .user_info .wxIcon{
+	position: absolute;
+	width: 35px;
+	right: 18px;
+	top: 3px;
+}
+.team_subor .subor_from .details{
+	background: rgb(253,249,246);
+	padding: 10px;
+	line-height: 15px;
+	border-left: 1px solid #f1d2a8;
+}
+.team_subor .subor_from .details span{
+	font-size: 13px;
+	font-weight: bold;
+}
+.yjBox{
+	display: flex;
+}
+.yj_gr{
+	flex: 1;
+}
+.yj_td{
+	flex: 1;
+}
+.fontWeight{
+	font-size: 22px;
+	font-weight: bold;
+}
+.underline{
+	border: 1px solid #F0F0F0;
+	margin: 10px 0px;
+}
+.clear{
+	height: 20px;
+}
+.my_team{
+	position: relative;
+	height: 30px;
+	font-size: 12px;
+}
+.searchBox{
+	position: absolute;
+	right: 20px;
+	top:-2px;
+}
+
+.search_xjyj{
+	border: 1px solid #ddd;
+	border-radius: 30px;
+	color: #999;
+	width: 120px;
+    text-align: center;
+}

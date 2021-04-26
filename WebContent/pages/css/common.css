@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.clear {
+  clear: both;
+  height: 1px; }
+
+#loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99999;
+  display: none; }
+
+#loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100000;
+  width: 80px;
+  animation: rotate 1s infinite; }
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg); } }
+
+.askInfoMask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99; 
+}
+.askInfoMask .innerForm {
+    width: 90%;
+    background: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 3px;
+    box-sizing: border-box; 
+}
+.askInfoMask .innerForm .formZone {
+	padding: 25px 20px; 
+	display: flex;
+}
+.askInfoMask .innerForm .formZone .left{
+	flex-grow: 1;
+}
+.askInfoMask .innerForm .formZone .left img{
+	width: 100%;
+}
+.askInfoMask .innerForm .formZone .right{
+	flex-grow: 1;
+}
+.askInfoMask .innerForm .formZone .right img{
+	width: 100%;
+}
+.askInfoMask .innerForm .clear{
+	float: right;
+}
+.askInfoMask .innerForm .clear img{
+	width: 100%;
+}

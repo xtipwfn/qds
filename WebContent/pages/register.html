@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />
+		<link rel="stylesheet" href="css/register.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>注册</title>
+
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.tips_lint{
+				text-align: center;
+				width: 100%;
+				display: block;
+				padding-top: 10px;
+				font-size: 12px;
+				color: saddlebrown;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo">
+				<h4>注册为<span class="qdsTitle"></span>会员</h4>
+			</div>
+			<form class="form">
+				<input type="hidden" id="icode" value="1">
+
+				<div class="input_box">
+					<input type="text" class="input u-full-width" id="xm" placeholder="请输入姓名">
+				</div>
+				<div class="input_box">
+					<input type="tel" class="input" id="tel" placeholder="请输入手机号">
+					<input type="button" value="发送验证码" id="sendcode" onclick="sendMessage()">
+				</div>
+				<div class="input_box">
+					<input type="text" class="input u-full-width" id="smscode" placeholder="请输入短信验证码" maxlength="6">
+				</div>
+				<div class="input_box">
+					<select class="u-full-width" id="job">
+						<option value="">请选择您的职业</option>
+						<option value="信贷员">信贷员</option>
+						<option value="渠道专员">渠道专员</option>	
+						<option value="银行职员">银行职员</option>
+						<option value="证券员">证券员</option>
+						<option value="保险员">保险员</option>
+						<option value="中介行业">中介行业</option>
+						<option value="其他">其他</option>
+					</select>
+				</div>
+				<div class="agreement">
+					<input type="checkbox" class="ke-icon-checked" id="agreement" name="agreement" checked="" />
+					我已阅读并同意<a href="agreement.html">用户注册协议</a>
+				</div>
+				<input type="button" id="button" class="button-primary u-full-width" value="注册">
+				<a href="login.html" class="tips_lint">已有账号，前去登录</a>
+			</form>
+		</div>
+		<div class="footer">
+			
+		</div>
+		
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+
+		<script>
+			var sj_user_uuid = GetArgs(window.location.search,'sj_user_uuid');
+			$(".qdsTitle").text(localStorage.getItem('qdsTitle'));
+			
+			$("#button").click(function() {
+				var agreement = $("input[type='checkbox']").is(':checked');
+
+				var openid = "";
+				var xm = $("#xm").val();
+				var tel = $("#tel").val();
+				var smscode = $("#smscode").val();
+				var job = $('#job').val();
+				if (xm == '') {
+					mui.toast('请输入您的姓名！');
+					return false;
+				}
+				if (!(/^1[3456789]\d{9}$/.test(tel))) {
+					mui.toast("手机号码有误！");
+					return false;
+				}
+				if (job == '') {
+					mui.toast('请选择您的职业！');
+					return false;
+				}
+				if (agreement == false) {
+					mui.toast('请查看并同意注册协议');
+					return false;
+				}
+				$('#loading').show();
+				$.ajax({
+					type: 'POST',
+					dataType: 'json',
+					data: {
+						'action': 'saveRegister',
+						'xm': xm,
+						'phone': tel,
+						'zw': job,
+						'code': smscode,
+						'sj_user_uuid': sj_user_uuid
+					},
+					url: baseUrl + 'RegisterServlet',
+					success: function(data) {
+						console.log(data);
+						if (data.result == 'success') {
+							mui.toast(data.msg);
+							localStorage.setItem('user_uuid', data.userUuid);
+							localStorage.setItem('user_name', data.xm);
+							window.location.href = "https://www.rongyixin.net/ryx/IndexServlet";
+						} else {
+							mui.toast(data.msg);
+						}
+					},
+					error: function(data) {
+						console.log(data)
+					},
+					complete: function(){
+						$('#loading').hide()
+					}
+				})
+			})
+		</script>
+
+		<!--短信验证码-->
+		<script type="text/javascript">
+			var phoneReg = /(^1[3|4|5|6|7|8|9]\d{9}$)|(^09\d{8}$)/; //手机号正则
+			var count = 180; //间隔函数，1秒执行
+			var InterValObj; //timer变量，控制时间
+			var curCount; //当前剩余秒数
+			/*第一*/
+			function sendMessage() {
+				curCount = count;
+				var tel = $.trim($('#tel').val());
+				if (!phoneReg.test(tel)) {
+					mui.toast("请输入有效的手机号码");
+					return false;
+				}
+				//向后台发送处理数据
+				$.ajax({
+					type: 'POST',
+					data: {
+						action: 'sendCode',
+						phone: $.trim($('#tel').val())
+					},
+					url: baseUrl + 'RegisterServlet',
+					dataType: 'json',
+					success: function(data) {
+						console.log(data);
+						if (data.result == 'success') {
+							mui.toast('已发送');
+							//设置button效果，开始计时
+							$("#sendcode").attr("disabled", "true");
+							$("#sendcode").val(+curCount + "秒再获取");
+							InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+				
+						} else {
+							mui.toast('发送失败，请重试');
+							return false;
+						}
+					},
+					error: function(data) {
+						console.log(data)
+					}
+				})
+
+			}
+
+			function SetRemainTime() {
+				if (curCount == 0) {
+					window.clearInterval(InterValObj); //停止计时器
+					$("#sendcode").removeAttr("disabled"); //启用按钮
+					$("#sendcode").val("重新发送");
+				} else {
+					curCount--;
+					$("#sendcode").val(+curCount + "秒再获取");
+				}
+			}
+		</script>
+
+		<!-- <div class="ui__alert" style="z-index: 9999;">
+			<div class="ui__alert_bg in"></div>
+			<div class="ui__alert_content in">
+				<div class="ui__content_body">
+					<h4 class="ui__title">提示</h4>
+					<div>请联系客服获取邀请码</div>
+				</div>
+				<div class="ui__content_foot"><a class="btn_done">确认</a></div>
+			</div>
+		</div> -->
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>产品详情</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script type="text/javascript">
+		 document.write('<link rel="stylesheet" type="text/css" href="css/prod_details.css?' + Math.random() + '"/>');
+		</script>
+		<script src="plugin/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		document.write("<s" + "cript type='text/javascript' src='js/global.js?" + Math.random() + "'></s" + "cript>");
+		 document.write("<s" + "cript type='text/javascript' src='js/prod_details.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		<div class="bg_container">
+		</div>
+		<div class="infoBox">
+			<div class="pro_intro">
+				<div class="title_top">
+					<img src="" id="LOGO_URL"/>
+					<span class="prodname" id="PROD_NAME"></span>
+				</div>
+				<div class="flex-box">
+					<div class="flex-item-ed">
+						<div class="value red" id="MAX_JE"></div>
+						<div class="title">最高额度（元）</div>
+					</div>
+					<div class="flex-item-fl">
+						<div class="value" id="zgjl"></div>
+						<div class="title">最高奖励</div>
+					</div>
+					<div class="flex-item-js">
+						<div class="value" id="JSZQ"></div>
+						<div class="title">结算周期</div>
+					</div>
+				</div>
+				<div class="intro_new_container">
+					<div class="single_intro">
+						<img src="img/new_check.png" >
+						授信期限:<span id="DKQS_2"></span>
+					</div>
+					<div class="single_intro">
+						<img src="img/new_check.png" >
+						贷款利率:<span id="DKLL"></span>
+					</div>
+					<div class="single_intro">
+						<img src="img/new_check.png" >
+						还款方式:<span id="HKFS"></span>
+					</div>
+					<div class="single_intro">
+						<img src="img/new_check.png" >
+						件均额度（万元）:<span id="JJED"></span>
+					</div>
+				</div>		
+				
+			</div>
+			<div class="pro_specify">
+				<p class="title">产品返佣</p>
+				<p class="content">按融资顾问等级，阶梯返佣。</p>
+				<p class="content">
+					初级顾问
+					<span id="BYFY"></span> 
+					中级顾问 
+					<span id="HJFY"></span> 
+					高级顾问
+					<span id="ZSFY"></span> 
+				</p>
+			</div>			
+			
+			<div class="pro_specify">
+				<p class="title">工资结算说明</p>
+				<p class="content" id="ZKFKSJ"></p>
+			</div>
+			
+			<div class="pro_specify">
+				<p class="title">可操作地区</p>
+				<p class="content" id="DQ"></p>
+			</div>
+			
+			<div class="pro_specify cpsm" style="display: none;">
+				<p class="title">产品说明</p>
+				<p class="content" id="PROD_SM"></p>
+			</div>
+			
+			<div class="pro_specify">
+				<p class="title">产品特点</p>
+				<p class="content" id="PROD_TD"></p>
+			</div>
+			
+			<div class="pro_specify">
+				<p class="title">申请条件</p>
+				<p class="content" id="PROD_TJ"></p>
+			</div>
+			
+			<div class="pro_specify sxzl" style="display: none;">
+				<p class="title">申请所需资料</p>
+				<p class="content" id="PROD_SXZL"></p>
+			</div>
+			
+			<div class="pro_specify sqlcsm" style="display: none;">
+				<p class="title">申请流程说明</p>
+				<a id="toGuide" class="guide" style="display: none;">操作指引</a>
+				<p class="content lcsm" id="PROD_LCSM"></p>
+			</div>
+			
+			<div class="bottom_fix_button_list">
+				<div class="ljtg" id="ljsq">
+					立即申请
+				</div>
+				<div class="ljsq" id="yjtg">
+					一键推广
+				</div>
+			</div>
+		<!-- <div class="footer">
+			<button id="ljsq">立即申请</button>
+			<span></span>
+			<button id="yjtg">一键推广</button>
+		</div> -->
+	</body>
+</html>

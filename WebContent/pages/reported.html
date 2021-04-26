@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>报备信息</title>
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />	
+		<link rel="stylesheet" type="text/css" href="css/common.css" />	
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/global.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/reported.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<style type="text/css">
+			body{
+				font-size: initial;
+			    line-height: 21px;
+			    color: #000;
+			    background-color: #fff;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.header{
+				width: 100%;height: 44px;position: relative;background: #FFFFFF;
+			}
+			.header img{
+				width: 64%;
+				position: absolute;
+				top: 50%;
+				left: 15px;
+				transform: translateY(-50%);
+			}
+			.center{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.center .tipsImg{
+				width: 190px;
+				margin: 20px auto;
+			}
+			
+			button{
+				margin: 60px auto;
+				border: 1px solid red;
+				background: none;
+				width: 240px;
+				height: 40px;
+				border-radius: 30px;
+				color: white;
+				outline: none;
+				font-size: 16px;
+				background: #B50006;
+			}
+			.kfLink{
+				color: #999999;
+				font-size: 12px;
+				text-align: center;
+				position: fixed;
+				bottom: 20px;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+				white-space: nowrap;
+			}			
+			.formBox {
+			  padding-top: 20px;
+			}
+			.formBox label {
+			  color: #666;
+			}
+			.formBox label img {
+			  position: relative;
+			  top: 4px;
+			  margin-right: 8px;
+			  width: 0.22rem;
+			}
+			.formBox .inputBox{
+				display: flex;
+				padding: 0px 10px 0px 10px;
+			}
+			.formBox .inputBox .leftBox{
+				flex-basis: 105px;
+				height:35px;
+			    line-height: 40px;
+			    text-align: left;
+				font-size: 14px;
+			}
+			.formBox .inputBox .leftBox span{
+				color: red;
+			}
+			
+			.formBox .inputBox .rightBox {
+				flex-grow: 1; 
+			    /* width: 72%;*/
+			    margin: 0 auto;
+			    height: 35px;
+				line-height: 35px;
+			    position: relative;
+			    margin-bottom: 20px;
+			    border-bottom: 1px solid #E5E5E5;
+			}
+			.formBox .inputBox .rightBox input {
+			  width: 100%;
+			  height: 35px;
+			  font-size: 14px;
+			  border: none;
+			  background: transparent;
+			  color: #151515;
+			  position: relative;
+			}
+			.tipsImg span{
+				color: rgb(204,45,53);
+				font-weight: bold;
+				font-size: 26px;
+				margin-left: 5px;
+			}
+			.tipsImg img{
+				width: 26px;
+			    position: relative;
+			    top: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="header">			
+			<img src="imgs/srt_logo.png"/>
+		</div>-->
+		
+		<div class="center">	
+			<!--<img src="img/success.png" class="tipsImg"/>-->
+			<div class="tipsImg">
+				<img src="img/sucess.png"/>
+				<span>报备信息</span>
+			</div>
+			
+			<div class="formBox">	
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>姓名:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="xm" id="xm" value="" placeholder="请输入申请人姓名"/>
+					</div>
+				</div>				
+				
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>身份证号:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="sfzhm" id="sfzhm" value="" placeholder="请输入身份证号"/>
+					</div>
+				</div>
+				
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>手机号码:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="phone" id="phone" value="" placeholder="请输入申请人手机号" oninput="if(value.length>11)value=value.slice(0,11)" />
+					</div>
+				</div>
+				
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>按揭房产地址：</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="ajfcdz" id="ajfcdz" value="" placeholder="如，广东，广州"/>
+					</div>
+				</div>
+				
+			</div>
+			
+			<button class="submitButton">确认提交</button>
+		</div>
+		
+		<!--<div class="kfLink">
+			
+		</div>-->
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+</html>

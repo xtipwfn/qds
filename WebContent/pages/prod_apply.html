@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="controller">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>产品申请</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />
+		<script> 
+		　document.write("<link rel='stylesheet' href='css/prod_apply.css?v="+Math.random()+"'>"); 
+		</script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="plugin/angularjs.min-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/prod_apply.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+	</head>
+	<body >
+		<div class="banner">
+			<img id="imgs" src="img/banner04.png"/>
+		</div>
+		<div class="paddingContent">
+			<div class="formBox">	
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>姓名:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="frXm" id="frXm" value="" placeholder="请输入申请人姓名"/>
+					</div>
+				</div>				
+				
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label><span>*</span>手机号:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="frPhone" id="frPhone" value="" placeholder="请输入申请人手机号"/>
+					</div>
+				</div>
+				
+				<div class="inputBox qymc" style="display: none;">
+					<div class="leftBox">					
+						<label><span>*</span>企业名称:</label>
+					</div>
+					<div class="rightBox">
+						<input type="text" name="gsmc" id="gsmc" value="" placeholder="请输入企业名称"/>
+					</div>
+				</div>
+				<div class="inputBox">
+					<div class="leftBox">					
+						<label>地区:</label>
+					</div>
+					<div class="rightBox">
+						<div class="area">
+							<span>请选择</span>
+							<img src="img/arrow_down.png" >
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<button class="submitButton">立即申请</button>
+			
+			<div class="empty"></div>
+			<div class="empty"></div>
+			
+			<div class="tips">
+				业务支持热线：<a href="tel://18529100559">18529100559</a>
+			</div>
+		</div>
+		
+		<div class="area_pick_mask">
+			<div class="list">
+				<h4>请选择区域</h4>
+				<ul>
+					<li ng-repeat="item in areaList" dm="{{item.XZQHSZ_DM}}">{{item.XZQHMC}}</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+	<style type="text/css">
+		.banner #imgs{				
+				border-bottom: 1px solid #efeff4;
+			}
+		.area {
+	      flex-basis: 90px;
+	      padding-left: 18px;
+	      height: 38px;
+	      line-height: 25px;
+	      font-size: 14px;
+	      border-radius: 5px; }
+	     .area img {
+	        width: 12px;
+	        vertical-align: middle;
+	        position: relative;
+	        right: -2px;
+	        top: -2px; }
+	    .area_pick_mask {
+	  position: fixed;
+	  background: rgba(0, 0, 0, 0.3);
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  z-index: 99;
+	  display: none; }
+	  .area_pick_mask .list {
+	    width: 150px;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    right: -200px;
+	    background: #FFFFFF;
+	    overflow-y: auto;
+	    box-shadow: -2px 0px 15px -3px #000;
+	    transition: all 0.4s; }
+	    .area_pick_mask .list h4 {
+	      width: 100%;
+	      height: 40px;
+	      line-height: 40px;
+	      text-align: center;
+	      font-size: 14px;
+	      border-bottom: 1px solid #F2F2F2; }
+	    .area_pick_mask .list ul {
+	      list-style: none; }
+	      .area_pick_mask .list ul li {
+	        height: 40px;
+	        line-height: 40px;
+	        text-align: center;
+	        font-size: 14px;
+	        border-bottom: 1px solid #F2F2F2; }
+	</style>
+</html>

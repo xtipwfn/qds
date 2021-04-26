@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/register.css">
+		<style type="text/css">
+			.tips_lint{
+				text-align: center;
+				width: 100%;
+				display: block;
+				padding-top: 10px;
+				font-size: 12px;
+				color: saddlebrown;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="spreadController">
+			<div class="container">
+				<div class="logo">
+					<h4>注册为<span class="qdsTitle"></span>会员</h4>
+				</div>
+				<form class="form">
+					<input type="hidden" id="icode" value="1">
+	
+					<div class="input_box">
+						<input type="text" class="input u-full-width" id="xm" placeholder="请输入姓名">
+					</div>
+					<div class="input_box">
+						<input type="tel" class="input" id="tel" placeholder="请输入手机号">
+						<input type="button" value="发送验证码" id="sendcode">
+					</div>
+					<div class="input_box">
+						<input type="text" class="input u-full-width" id="smscode" placeholder="请输入短信验证码" maxlength="6">
+					</div>
+					<div class="input_box">
+						<select class="u-full-width" id="job">
+							<option value="">请选择您的职业</option>
+							<option value="信贷员">信贷员</option>
+							<option value="渠道专员">渠道专员</option>	
+							<option value="银行职员">银行职员</option>
+							<option value="证券员">证券员</option>
+							<option value="保险员">保险员</option>
+							<option value="中介行业">中介行业</option>
+							<option value="其他">其他</option>
+						</select>
+					</div>
+					<div class="agreement">
+						<input type="checkbox" class="ke-icon-checked" id="agreement" name="agreement" checked="" />
+						我已阅读并同意<a href="agreement.html">用户注册协议</a>
+					</div>
+					<input type="button" id="button" class="button-primary u-full-width" value="注册">
+					<a href="login.html" class="tips_lint">已有账号，前去登录</a>
+				</form>
+			</div>
+			<div class="footer">
+			
+			</div>
+		</div>
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+
+</html>

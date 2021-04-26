@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>关注</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style type="text/css">
+			.container{
+				width: 100%;
+			}
+			.container img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<img class="minProgram" src="img/minProgram.png"></img>
+		</div>
+	</body>
+	<script>
+		var qds = GetArgs(window.location.search,'qds');
+		if(qds){
+			var minProgram="img/"+qds+".png";
+			$(".minProgram").attr("src",minProgram);
+		}
+	</script>
+</html>

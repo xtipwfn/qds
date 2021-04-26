@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/editPersonal.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/picker/css/mui.picker.all.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>完善资料</title>
+		
+		<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/picker/js/mui.picker.all.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/editPersonal.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<style type="text/css">
+			body{
+				background: #FFFFFF;
+			}
+			.headPhoto{
+				width: 60px;
+				height: 60px;
+				left: 100px;
+				position: absolute;
+				bottom: 5px;
+			}
+			.headPhoto .rightArrow{
+				width: 55px;
+    			height: 55px;
+				border-radius: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mine_info_edit_container">
+			<div class="inputBox" style="height: 60px;">
+				<label style="line-height: 60px;">头像</label>
+				<div class="headPhoto">					
+					<img class="rightArrow" id="headUrl" src="img/default.png"/> 				
+				</div>
+			</div>
+			<div class="inputBox">
+				<label for="username">姓名</label>
+				<input type="text" id="username" name="username" placeholder="请输入姓名（必填）" value=""/>
+			</div>
+			<div class="inputBox">
+				<label for="phone">手机号</label>
+				<input type="text" id="phone" name="phone" placeholder="请输入手机号" value="" readonly="readonly"/>
+			</div>			
+			<div class="inputBox">
+				<label for="passWord">密码</label>
+				<input type="password" id="passWord" name="passWord" placeholder="请输入密码" value=""/>
+			</div>
+			<div class="inputBox">
+				<label for="idCard">身份证件号码</label>
+				<input type="text" id="idCard" name="idCard" placeholder="请输入身份证件号码" value="" />
+			</div>
+			<div class="inputBox">
+				<label for="zfb">支付宝账号</label>
+				<input type="text" id="zfb" name="zfb" placeholder="请输入支付宝账号" value="" />
+			</div>
+			<div class="inputBox">
+				<label for="job">职业</label>
+				<input type="text" id="job" name="job" placeholder="请选择职业" value="" readonly="readonly"/>
+			</div>			
+			
+			<button id="submitbtn">提交信息</button>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,153 @@
+.banner img {
+  width: 100%;
+  display: block;
+}
+body {
+  box-sizing: border-box;
+  background: #FFFFFF; }
+
+.input_box input[type='text'],
+.input_box input[type='tel'] {
+  font-size: 14px;
+  height: 40px; }
+
+.sendcodebox {
+  display: flex; }
+  .sendcodebox #sendcode {
+    height: 40px;
+    margin: -10px 5px;
+    color: rgb(1,64,195); 
+	border: 1px solid rgb(1,64,195);
+	padding: inherit;
+	}
+
+/* #button {
+  background: #f04802;
+  color: #FFFFFF;
+  width: 100%;
+  margin: 20px auto;
+  height: 36px;
+  border: none; } */
+
+.footer {
+  font-size: 12px;
+  text-align: center;
+  color: #999;}
+
+.paddingContent {
+  	width: 100%;
+	font-size: 14px;
+	margin: 0px auto 0;
+}
+.paddingContent .formBox {
+  padding-top: 20px;
+}
+.paddingContent .formBox label {
+  padding-left: 10%;
+  color: #666;
+}
+.paddingContent .formBox label img {
+  position: relative;
+  top: 4px;
+  margin-right: 8px;
+  width: 0.22rem;
+}
+.paddingContent .formBox .inputBox{
+	display: flex;
+}
+.paddingContent .formBox .inputBox .leftBox{
+	/* flex-basis: 75px; */
+	flex-grow: 1;
+	width: 20%;
+	height:35px;
+    line-height: 40px;
+}
+.paddingContent .formBox .inputBox .leftBox span{
+	color: red;
+}
+
+.paddingContent .formBox .inputBox .rightBox {
+	flex-grow: 1;
+    width: 70%;
+    margin: 0 auto;
+    height: 35px;
+	line-height: 35px;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.paddingContent .formBox .inputBox .rightBox input {
+  width: 100%;
+  height: 35px;
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  color: #151515;
+  position: relative;
+}
+.paddingContent .submitButton {
+  width: 80%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: rgb(1,64,195);  
+  color: #FFFFFF;
+  font-size:14px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: block;
+  z-index: 9;
+  
+}
+.tips {
+  width: 90%;
+  left: 50%;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px; 
+  padding-top: 5px;
+  color: #999;
+  }
+  .tips span {
+    color: #ff0000; }
+  .empty {
+  width: 100%;
+  height: 20px;
+}
+.area_pick_mask {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: none; }
+  .area_pick_mask .list {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -200px;
+    background: #FFFFFF;
+    overflow-y: auto;
+    box-shadow: -2px 0px 15px -3px #000;
+    transition: all 0.4s; }
+    .area_pick_mask .list h4 {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid #F2F2F2; }
+    .area_pick_mask .list ul {
+      list-style: none; }
+      .area_pick_mask .list ul li {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        border-bottom: 1px solid #F2F2F2; }

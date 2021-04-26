@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" type="text/css" href="css/common.css" />
+			<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title>提示</title>			
+			<script src="js/global.js" type="text/javascript" charset="utf-8"></script>
+			<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+			
+			<style type="text/css">
+				body{
+					background: #FFFFFF;
+				}
+				.mine_container{
+					/* margin: 140px 20px auto 20px; */
+					padding:38% 12px 0;
+					text-align: center;
+				}
+				.mine_container .title{
+					font-size: 14px;
+				}
+				.mine_container p{
+					font-size: 14px;
+					color:#b2b2b2;
+					margin-bottom: 5px;
+				}
+				.mine_container .data_info{
+					padding:7px 13px;
+					border:1px solid #ccc;
+					margin:12px 0;
+					word-wrap: break-word;
+					word-break: break-all;
+					line-height: 28px;
+					
+				}
+				.mine_container .data_info .data{
+					color: #000000;
+					font-weight: 400;
+					font-size:18px;					
+				}
+				.footer{
+					position: absolute;
+					width: 90%;
+				  	height: 40px;
+				  	bottom: 0;
+					color: #496b88;
+					font-size: 12px;
+				}
+				.footer a{
+				color: #576b95;
+				}
+				 .clear{
+					 height: 3px;
+				 }
+			</style>
+	</head>
+	<body>
+		<div class="mine_container">
+			<span class="title">已扫描到以下内容</span>
+			<div class="clear"></div>
+			<div class="data_info">
+				<span class="data"></span>
+			</div>
+			<div class="clear"></div>
+			<p>扫描所得内容并非微信提供，请谨慎使用</p>
+			<p>如需使用，可通过复制操作获取内容</p>
+			<div class="footer">
+				<a class="xq">详情</a>
+				<span>&nbsp;|&nbsp;</span>
+				<a  class="jb">举报</a>
+			</div>
+		</div>
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ewm = GetArgs(window.location.search,'ewm');
+		var content="";
+		$('#loading').show();
+			$.ajax({
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					'action': 'queryEwmText',
+					'ewm': ewm
+				},
+				url: baseUrl + 'CommonServlet',
+				success: function(data) {
+					console.log(data);
+					if (data.result == 'success') {
+						$(".data").html(data.dmList[0].TEXT);
+						content=data.dmList[0].TEXT;
+					} else {
+						mui.toast(data.msg);
+					}
+				},
+				error: function(data) {
+					console.log(data)
+				},
+				complete: function(){
+					$('#loading').hide()
+				}
+			})
+			$('.xq').click(function(){		
+				window.location = "alert_help.html?lang=zh_CN";
+			});
+			
+			$('.jb').click(function(){			
+				window.location = "http://jubao.qq.com/cn/jubao?appname=wireless&subapp=weixin&jubaotype=url&uin=0&originuin=&url=" + encodeURIComponent(encodeURIComponent(content));
+			});
+		
+	</script>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="controller">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>申请提现</title>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/global.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/angularjs.min-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/destoon_finance_cash.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+	</head>
+	<style type="text/css">
+		body{
+			background: #FFFFFF;
+		}
+		.min_container{
+			width: 100%;
+		}
+		.back_img{
+			height: 150px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: rgb(223,111,78);
+			width: 100%;
+		}
+		.total_container{
+			    width: 345px;
+			    height: 150px;
+			    border: 1px solid white;
+			    position: relative;
+				border-radius:5px;
+				background:white;
+			    margin: 20px auto;
+				margin-top: 55px;
+				box-shadow: 0px 2px 12px rgba(0,0,0,0.1);
+		}
+		.total_container .total{
+			position: relative;
+		}
+		.total_container .total .leftBox{
+			width:60%;
+			float:left;
+			padding: 19px;
+			font-weight:bold;		
+		}
+		.total .leftBox .zsy{					
+			font-size: 17px;
+			line-height: 40px;
+		}
+		.total .leftBox .zs{
+			font-size: 30px;
+		}
+		.total .leftBox .sy{
+			line-height: 27px;
+			color: #999999;
+			font-size: 13px;
+		}
+		.total_container .total .rightBox{				
+			width:27%;
+			float:left;
+			margin-top: 50px;
+			text-align: center;
+		}
+		.total_container .total .tx{
+			font-size:15px;
+			font-weight:bold;
+			width:90px;
+			height:35px;
+			color:rgba(255,255,255,1);
+			background:rgba(233,48,28,1);
+			border-radius:17px;
+		}
+		.my_table{
+			margin: 25px auto;
+		}
+		.my_th,.my_tr{
+			display: flex;
+			flex-grow: 1;
+		}
+		.my_th div,
+		.my_tr div{
+			flex-grow: 1;
+			width: 0;
+			text-align: center;
+			position: relative;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.my_th{
+			font-size: 14px;
+			color: #333;
+			height: 36px;
+			line-height: 36px;
+		}
+		.my_th div:after{
+			position: absolute;
+			bottom: 0;
+			content: '';
+			display: block;
+			height: 1px;
+			background: #e5e5e5;
+			left: 5px;
+			right: 5px;
+			transform: scaleY(0.5);
+		}
+		.my_tr{
+			font-size: 12px;
+			height: 30px;
+			line-height: 30px;
+			color: #666666;
+		}
+	</style>
+	<body>
+		<div class="min_container">
+			<div class="back_img"></div>
+			<div class="total_container">
+				<div class="total">
+					<div class="leftBox">
+						<span class="zsy">总收益（元）</span></br>
+						<span class="zs" id="zsy">00</span></br>
+						<span class="sy">已提现：<span class="red" id="ytx">00</span></span></br>
+						<span class="sy">可提现：<span id="ktx">00</span></span>
+					</div>
+					<div class="rightBox">
+						<button class="tx withdrawDeposit">提现</button>
+					</div>
+				</div>
+			</div>
+		
+			<div class="my_table">
+				<div class="my_th">
+					<div>提现金额</div>
+					<div>提现状态</div>
+					<div>备注</div>
+					<div>提现时间</div>	
+				</div>
+				<div class="my_tr" ng-repeat="item in list">
+					<div>{{item.TX_JE}}</div>
+					<div>{{item.ZT}}</div>
+					<div>{{item.BZ}}</div>
+					<div>{{item.LRSJ}}</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

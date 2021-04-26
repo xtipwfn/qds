@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="index_container">
+			<div class="header">
+				<img class="logoImg" src="" />
+				<div>
+					<span>hi,<span class="username">您好</span></span>
+				</div>
+			</div>
+			<div class="mui-slider">
+			  <div class="mui-slider-group mui-slider-loop" >
+				  <div class="mui-slider-item mui-slider-item-duplicate" ng-repeat="item in bannerList">
+				    <img ng-src="{{item.banner}}" >
+				  </div>
+			  </div>
+			</div>
+			
+			<div class="yj_banner">
+				<div class="flex_item">
+					<div id="ljjj">0笔</div>
+					<p>累计进件</p>
+				</div>
+				<div class="flex_item">
+					<div id="ljrz">0亿</div>
+					<p>累计融资</p>
+				</div>
+				<div class="flex_item">
+					<div id="cpsl">0个</div>
+					<p>产品数量</p>
+				</div>
+			</div>
+			
+			<div class="filter_container">
+				<div class="area">
+					<span>请选择</span>
+					<img src="img/arrow_down.png" >
+				</div>
+				<div class="input_search_box">
+					<img src="img/search.png" />
+					<input type="text" name="search_value" id="search_value" value="" placeholder="请输入产品名称"/>
+				</div>
+				<div class="button_box">
+					<button>搜索</button>
+				</div>
+			</div>
+			
+			<div class="prod_classify">
+				<div class="prod_classify_title" >
+					<div class="fl" ng-repeat="item in prodFlList" ng-class="prodFl==item.FL_DM?'active':''" >
+						{{item.FL_MC}}
+				    </div>
+				</div>
+			</div>
+			
+			<div class="prod_list">
+				<div class="single_prod_can" ng-repeat="item in prodList">
+					<div class="top">
+						<img ng-src="{{item.LOGO_URL}}" >
+						{{item.PROD_NAME}}
+					</div>
+					<div class="prod_flex_container">
+						<div class="prod_ed">
+							<div class="ed">{{item.MAX_JE}}</div>
+							<div class="title">最高额度（元）</div>
+						</div>
+						<div class="prod_jl">
+							<div class="jl">{{item.ZSFY}}</div>
+							<div class="title">最高奖励</div>
+						</div>
+						<div class="prod_details">
+							<div class="todetails" ng-click="toDetails(item.BANK_URL,item.PROD_UUID)">立即推广</div>
+						</div>
+					</div>
+					<div class="rel_info_container">
+						<img src="img/check.png" />
+						{{item.DKLL}}
+						<img src="img/check.png" />
+						{{item.HKFS}}
+						<img src="img/check.png" />
+						{{item.DKQS}}期
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="emptyBar">
+				
+			</div>
+			
+		</div>
+		
+		<div class="area_pick_mask">
+			<div class="list">
+				<h4>请选择区域</h4>
+				<ul>
+					<li ng-repeat="item in areaList" dm="{{item.XZQHSZ_DM}}">{{item.XZQHMC}}</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+</html>

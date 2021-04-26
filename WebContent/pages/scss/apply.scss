@@ -1,0 +1,39 @@
+$baseColor:rgb(240,72,2);
+
+body{
+	box-sizing: border-box;
+	padding: 18px;
+	background: #FFFFFF;
+}
+
+.input_box{
+	input[type='text'],
+	input[type='tel']{
+		font-size: 14px;
+		height: 40px;
+	}
+}
+
+.sendcodebox{
+	display: flex;
+	#sendcode{
+		height: 40px;
+		margin-left: 5px;
+		color: $baseColor;
+	}
+}
+
+#button{
+	background: $baseColor;
+	color: #FFFFFF;
+	width: 100%;
+	margin: 20px auto;
+	height: 36px;
+	border: none;
+}
+
+.footer{
+	font-size: 12px;
+	text-align: center;
+	color: #999;
+}

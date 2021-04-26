@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>链接失效</title>
+		<link rel="stylesheet" type="text/css" href="css/fail.css"/>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#reAuth').click(function(){
+					window.opener=null;
+			        window.open('','_self');
+			        window.close();
+			        WeixinJSBridge.call('closeWindow');
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="fail_tips"> 
+			<img src="img/failure.png"/>
+			<!--<p class="failText">失败</p>-->
+			<p class="intro_text" style="text-align: center;">
+				抱歉，该链接已失效
+			</p>
+			<p class="contact" style="text-align: center;">
+				如有需要，请与我们客服人员联系。
+			</p>
+			
+			<button id="reAuth">我知道了</button>
+		</div>
+	</body>
+</html>

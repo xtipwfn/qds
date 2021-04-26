@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "microsoft sans serif";
+}
+
+.fail_tips {
+  text-align: center;
+  padding-top: 70px;
+}
+.fail_tips .failText {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #ff4242;
+  letter-spacing: 1px;
+}
+.fail_tips .intro_text {
+  color: #6b6a6f;
+  width: 90%;
+  display: block;
+  margin: 25px auto 15px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 26px;
+}
+.fail_tips .contact {
+  color: #6b6a6f;
+  width: 90%;
+  display: block;
+  margin: 25px auto 15px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 26px;
+}
+.fail_tips button {
+  width: 90%;
+  height: 42px;
+  line-height: 42px;
+  border: none;
+  background: #ff4242;
+  color: #FFFFFF;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=fail.css.map */

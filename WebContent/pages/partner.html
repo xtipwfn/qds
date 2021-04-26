@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="controller">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="plugin/mui.min.css" />	
+		<script type="text/javascript">
+		 document.write('<link rel="stylesheet" type="text/css" href="css/partner.css?' + Math.random() + '"/>');
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>合伙人</title>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/global.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+		<script src="plugin/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugin/angularjs.min-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 document.write("<s" + "cript type='text/javascript' src='js/partner.js?" + Math.random() + "'></s" + "cript>");
+		</script>
+	</head>
+	<body>
+		<div id="mine_container">
+			<div class="top_info">
+				<div class="top_img">					
+					<img src="img/default.png" class="headUrl"/>
+				</div>
+				<!-- <img class="dj" src="img/v1.png"/> -->
+				<span class="username">{{list[0].XM}}</span>
+				<p class="phone">{{list[0].PHONE}}</p>
+			</div>
+			<!--合伙人-->
+			<div class="top_hhr">
+				<div class="hhr_left tz">
+					<p>邀请用户（人）</p>
+					<img class="arrow_down" src="img/arrow_down.png" />
+					<span class="yqyh" style="font-size: 20px;font-weight: bold;">--</span>
+				</div>
+				<span></span>
+				<div class="hhr_right tz">
+					<p>合伙人团队（人）</p>
+					<img class="arrow_down" src="img/arrow_down.png" />
+					<span class="hhrtd" style="font-size: 20px;font-weight: bold;">--</span>
+				</div>
+			</div>
+			
+			<!--累计收入-->
+			<div class="earnings tz">
+				<div class="earnings_info">
+					<div class="top">
+						累计收入（元）
+					</div>
+					<div class="clear"></div>
+					<div class="center">
+						<span class="left ljsy" style="font-size: 28px;">--</span>
+						<span class="right">详情>>
+						<!-- <img class="arrow_down" src="img/arrow_down.png" /> -->
+						</span>
+						
+					</div>
+					<div class="center">
+						<span class="left">可提现<span style="padding-left: 10px;font-size: 16px;" class="ktx">--</span>元</span>
+						<span class="right">今日收入<span class="jrsr" style="font-size: 16px;">--</span>元</span>
+					</div>
+				</div>
+				
+				<div class="team">
+					<div class="team_title">
+						本月团队等级
+						<div class="yhlx_box">
+							<span class="yhlx"></span>
+						</div>
+						<div class="team_right">							
+							<span style="font-size: 12px;color: #999999;">详情<img class="arrow_down" src="img/arrow_down.png" /></span>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<p style="color: #666"><span class="yf"></span>月总业绩（元）<span style="color: red;font-size: 16px;" class="zyj">--</span></p>
+					<!-- <p>还差10.000.00元可升级至下一等级</p> -->
+				</div>
+			</div>
+			
+			<!--奖励规则-->
+			<!-- <h4>奖励规则</h4>
+			<div class="award">
+				<div class="award_info">
+					<img src="img/prod/sxd.jpg"/>
+					<div class="tg_top">直推奖</div>
+					<div>
+						<span class="tg_title">信贷服务推广</span>
+					</div>
+					<div class="tg_ll">
+						<span class="bfb">2.5</span>%
+						<div class="zg">最高</div>
+					</div>
+				</div>
+				<span></span>
+				<div class="award_info">
+					<img src="img/prod/sxd.jpg"/>
+					<div class="csyjj">出师越级奖</div>
+					<div>
+						<span class="cs_bor">合伙人招募</span>
+					</div>
+					<div class="csjbl">
+						<span class="bbl">8</span>%
+						<span class="hdxj">获得下级</span>
+						<span class="ztjsr">直推奖收入</span>
+					</div>
+				</div>
+			</div> -->
+			
+			<div class="footer">
+				<button id="ljsq">信贷服务推广</button>
+				<button id="yjtg">合伙人招募</button>
+			</div>
+		</div>
+		<div id="loading">
+			<img src="img/loading.png" >
+		</div>
+	</body>
+</html>
