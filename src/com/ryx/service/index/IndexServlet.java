@@ -77,7 +77,7 @@ public class IndexServlet extends HttpServlet implements Servlet {
 		try {
 			Session session = HibernateSessionFactory.getSession();
 			// 查询初始化需要的数据
-			String sql = " select qds,title,logo,img_first,img_second,img_third,ljjj,ljrz,cpsl from T_QDS_INIT t where t.qds=? ";
+			String sql = " select qds,title,logo,img_first,img_second,img_third,ljjj,ljrz,cpsl,kf_phone,kf_ewm from T_QDS_INIT t where t.qds=? ";
 			SQLQuery query = session.createSQLQuery(sql);
 			query.setParameter(0, qds);
 			query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
