@@ -149,21 +149,21 @@ public class RegisterServlet extends HttpServlet implements Servlet {
 				jsonObject.put("msg", "手机号不能为空！");
 				return;
 			}
-			if (!phone.equals(verifyphone)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "注册手机号与发送短信手机号不一致！");
-				return;
-			}
-			if (code == null || "".equals(code)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "验证码不能为空！");
-				return;
-			}
-			if (!code.equals(verifyCode)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "验证码不一致！");
-				return;
-			}
+//			if (!phone.equals(verifyphone)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "注册手机号与发送短信手机号不一致！");
+//				return;
+//			}
+//			if (code == null || "".equals(code)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "验证码不能为空！");
+//				return;
+//			}
+//			if (!code.equals(verifyCode)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "验证码不一致！");
+//				return;
+//			}
 			String xm = request.getParameter("xm");
 			if (xm != null && !"".equals(xm)) {
 				xm = URLDecoder.decode(xm, "UTF-8");

@@ -12,8 +12,12 @@ app.controller('mineController', function($scope, $route, $routeParams) {
 			window.location.href = baseUrl + 'ProdServlet?action=getZbmmImg&userUuid='+user_uuid+'&userName='+user_name+'&qds='+qds
 		})
 		var user_uuid = localStorage.getItem('user_uuid');
-		var user_name = localStorage.getItem('user_name');		
+		var user_name = localStorage.getItem('user_name');	
+		var kfImg = localStorage.getItem('kfImg');
+		var tel = localStorage.getItem('tel');
 		
+		document.getElementById("tel").href="tel://"+tel;
+		$("#kfImg").attr("src",kfImg);
 		
 		$.ajax({
 			type: 'POST',

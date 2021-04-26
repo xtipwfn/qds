@@ -159,6 +159,7 @@ public class LoginServlet extends HttpServlet implements Servlet {
 	 */
 	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String openid = (String) request.getSession().getAttribute("openid");
+		openid="123";
 		String headimgurl = (String) request.getSession().getAttribute("headimgurl");
 		JSONObject jsonObject = new JSONObject();
 		String qds = request.getParameter("qds");
@@ -221,21 +222,21 @@ public class LoginServlet extends HttpServlet implements Servlet {
 				jsonObject.put("msg", "手机号不能为空！");
 				return;
 			}
-			if (!phone.equals(verifyphone)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "登陆手机号与发送短信手机号不一致！");
-				return;
-			}
-			if (code == null || "".equals(code)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "验证码不能为空！");
-				return;
-			}
-			if (!code.equals(verifyCode)) {
-				jsonObject.put("result", "fail");
-				jsonObject.put("msg", "验证码不一致！");
-				return;
-			}
+//			if (!phone.equals(verifyphone)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "登陆手机号与发送短信手机号不一致！");
+//				return;
+//			}
+//			if (code == null || "".equals(code)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "验证码不能为空！");
+//				return;
+//			}
+//			if (!code.equals(verifyCode)) {
+//				jsonObject.put("result", "fail");
+//				jsonObject.put("msg", "验证码不一致！");
+//				return;
+//			}
 			Session session = HibernateSessionFactory.getSession();
 			String sql = " select user_uuid,xm,openid from t_qds_user t where t.phone=? and t.qds=? ";
 			SQLQuery query = session.createSQLQuery(sql);

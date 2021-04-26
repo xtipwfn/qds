@@ -9,7 +9,7 @@ app.controller('indexController', function($scope, $route, $routeParams) {
 	$scope.prodFl = '01';	
 	var user_uuid = localStorage.getItem('user_uuid');
 	var user_name = localStorage.getItem('user_name');	
-	var qds = GetArgs(window.location.search,'qds');	
+	var qds = GetArgs(window.location.search,'qds')|| localStorage.getItem('qds');;	
 	localStorage.setItem('qds',qds);
 	
 	$(function() {
@@ -33,6 +33,9 @@ app.controller('indexController', function($scope, $route, $routeParams) {
 					if(data.bannerlist){						
 						$scope.bannerList =data.bannerlist;
 					}
+					localStorage.setItem('kfImg',data.KF_EWM);
+					localStorage.setItem('tel',data.KF_PHONE);
+					
 					console.log($scope.bannerList )
 				} else {
 					$("#ljjj").html("0笔");
