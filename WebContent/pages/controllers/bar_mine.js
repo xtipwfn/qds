@@ -89,9 +89,9 @@ app.controller('mineController', function($scope, $route, $routeParams) {
 				}
 			})
 		}
-//		 if( !(user_uuid && user_name)  || "undefined" ==user_name ){
-//		 	window.location.href="login.html"
-//		 }
+		 if( !(user_uuid && user_name)  || "undefined" ==user_name ){
+		 	window.location.href="login.html"
+		 }
 
 		if(user_name){
 			$('.username').text(user_name);

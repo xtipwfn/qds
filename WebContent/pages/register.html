@@ -72,6 +72,7 @@
 		<script>
 			var sj_user_uuid = GetArgs(window.location.search,'sj_user_uuid');
 			$(".qdsTitle").text(localStorage.getItem('qdsTitle'));
+			var qds =localStorage.getItem('qds');
 			
 			$("#button").click(function() {
 				var agreement = $("input[type='checkbox']").is(':checked');
@@ -107,7 +108,8 @@
 						'phone': tel,
 						'zw': job,
 						'code': smscode,
-						'sj_user_uuid': sj_user_uuid
+						'sj_user_uuid': sj_user_uuid,
+						'qds':qds
 					},
 					url: baseUrl + 'RegisterServlet',
 					success: function(data) {
@@ -150,7 +152,8 @@
 					type: 'POST',
 					data: {
 						action: 'sendCode',
-						phone: $.trim($('#tel').val())
+						phone: $.trim($('#tel').val()),
+						qds:qds
 					},
 					url: baseUrl + 'RegisterServlet',
 					dataType: 'json',

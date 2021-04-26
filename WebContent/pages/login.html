@@ -57,6 +57,7 @@
 		<script>
 			
 			$(".qdsTitle").text(localStorage.getItem('qdsTitle'));
+			var qds =localStorage.getItem('qds');
 			
 			$("#button").click(function() {
 				var tel = $("#tel").val();
@@ -76,7 +77,8 @@
 					data: {
 						'action': 'login',
 						'phone': tel,
-						'code': smscode
+						'code': smscode,
+						'qds':qds
 					},
 					url: baseUrl + 'LoginServlet',
 					success: function(data) {
@@ -120,7 +122,8 @@
 					type: 'POST',
 					data: {
 						action: 'sendCode',
-						phone: $.trim($('#tel').val())
+						phone: $.trim($('#tel').val()),
+						qds:qds
 					},
 					url: baseUrl + 'RegisterServlet',
 					dataType: 'json',

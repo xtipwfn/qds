@@ -5,6 +5,7 @@ app.controller('spreadController', function($scope, $route, $routeParams) {
 	$(function() {
 		document.title = localStorage.getItem('qdsTitle');
 		$(".qdsTitle").text(localStorage.getItem('qdsTitle'));
+		var qds =localStorage.getItem('qds');
 		
 		var sj_user_uuid = GetArgs(window.location.search,'sj_user_uuid');
 			
@@ -42,7 +43,8 @@ app.controller('spreadController', function($scope, $route, $routeParams) {
 					'phone': tel,
 					'zw': job,
 					'code': smscode,
-					'sj_user_uuid': sj_user_uuid
+					'sj_user_uuid': sj_user_uuid,
+					'qds':qds
 				},
 				url: baseUrl + 'RegisterServlet',
 				success: function(data) {
@@ -84,7 +86,8 @@ app.controller('spreadController', function($scope, $route, $routeParams) {
 				type: 'POST',
 				data: {
 					action: 'sendCode',
-					phone: $.trim($('#tel').val())
+					phone: $.trim($('#tel').val()),
+					qds:qds
 				},
 				url: baseUrl + 'RegisterServlet',
 				dataType: 'json',
