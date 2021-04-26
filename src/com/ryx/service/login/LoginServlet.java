@@ -51,13 +51,13 @@ public class LoginServlet extends HttpServlet implements Servlet {
 				checkLogin(request, response);
 			}
 
-//			if ("queryUser".equals(action)) {// 查询用户信息
-//				queryUser(request, response);
-//			}
-//
-//			if ("saveUser".equals(action)) {// 完善用户信息
-//				saveUser(request, response);
-//			}
+			if ("queryUser".equals(action)) {// 查询用户信息
+				queryUser(request, response);
+			}
+
+			if ("saveUser".equals(action)) {// 完善用户信息
+				saveUser(request, response);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,9 +86,10 @@ public class LoginServlet extends HttpServlet implements Servlet {
 			String pwd = request.getParameter("pwd");
 			String sfzjhm = request.getParameter("sfzjhm");
 			String zfbzh = request.getParameter("zfbzh");
+
 			String headimgurl = (String) request.getSession().getAttribute("headimgurl");
 			Session session = HibernateSessionFactory.getSession();
-			String insetrSql = " update t_ryx_user t set t.xm=?,t.pwd=?,t.sfzjhm=?,t.zfbzh=?,t.zw=?,t.xgsj=sysdate,t.head_url=? where t.user_uuid=? ";
+			String insetrSql = " update t_qds_user t set t.xm=?,t.pwd=?,t.sfzjhm=?,t.zfbzh=?,t.zw=?,t.xgsj=sysdate,t.head_url=? where t.user_uuid=? ";
 			Connection conn = HibernateSessionFactory.connection();
 			PreparedStatement ps = conn.prepareStatement(insetrSql);
 			ps.setString(1, xm);
@@ -126,7 +127,7 @@ public class LoginServlet extends HttpServlet implements Servlet {
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Session session = HibernateSessionFactory.getSession();
-			String sql = " select  xm,phone,pwd,sfzjhm,zfbzh,zw,head_url from t_ryx_user t where t.user_uuid=? ";
+			String sql = " select  xm,phone,pwd,sfzjhm,zfbzh,zw,head_url from t_qds_user t where t.user_uuid=? ";
 			SQLQuery query = session.createSQLQuery(sql);
 			query.setParameter(0, userUuid);
 			query.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
@@ -159,8 +160,8 @@ public class LoginServlet extends HttpServlet implements Servlet {
 	 */
 	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String openid = (String) request.getSession().getAttribute("openid");
-		openid="123";
 		String headimgurl = (String) request.getSession().getAttribute("headimgurl");
+		openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		String qds = request.getParameter("qds");
 		if(qds == null || "".equals(qds)){
@@ -222,21 +223,21 @@ public class LoginServlet extends HttpServlet implements Servlet {
 				jsonObject.put("msg", "手机号不能为空！");
 				return;
 			}
-//			if (!phone.equals(verifyphone)) {
-//				jsonObject.put("result", "fail");
-//				jsonObject.put("msg", "登陆手机号与发送短信手机号不一致！");
-//				return;
-//			}
-//			if (code == null || "".equals(code)) {
-//				jsonObject.put("result", "fail");
-//				jsonObject.put("msg", "验证码不能为空！");
-//				return;
-//			}
-//			if (!code.equals(verifyCode)) {
-//				jsonObject.put("result", "fail");
-//				jsonObject.put("msg", "验证码不一致！");
-//				return;
-//			}
+			if (!phone.equals(verifyphone)) {
+				jsonObject.put("result", "fail");
+				jsonObject.put("msg", "登陆手机号与发送短信手机号不一致！");
+				return;
+			}
+			if (code == null || "".equals(code)) {
+				jsonObject.put("result", "fail");
+				jsonObject.put("msg", "验证码不能为空！");
+				return;
+			}
+			if (!code.equals(verifyCode)) {
+				jsonObject.put("result", "fail");
+				jsonObject.put("msg", "验证码不一致！");
+				return;
+			}
 			Session session = HibernateSessionFactory.getSession();
 			String sql = " select user_uuid,xm,openid from t_qds_user t where t.phone=? and t.qds=? ";
 			SQLQuery query = session.createSQLQuery(sql);

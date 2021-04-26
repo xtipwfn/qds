@@ -49,10 +49,10 @@ public class UserServlet extends HttpServlet implements Servlet {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			String action = request.getParameter("action");
-//			if ("init".equals(action)) {// 合伙人初始化
-//				init(request, response);
-//			}
-//
+			if ("init".equals(action)) {// 合伙人初始化
+				init(request, response);
+			}
+
 			if ("queryZsy".equals(action)) {// 查询总收益
 				queryZsy(request, response);
 			}
@@ -68,13 +68,13 @@ public class UserServlet extends HttpServlet implements Servlet {
 			if ("queryTxmx".equals(action)) {// 查询提现记录
 				queryTxmx(request, response);
 			}
-//			if ("saveTxsq".equals(action)) {// 保存提现申请
-//				saveTxsq(request, response);
-//			}
-//			
-//			if ("queryQuestion".equals(action)) {// 查询问题库
-//				queryQuestion(request, response);
-//			}
+			if ("saveTxsq".equals(action)) {// 保存提现申请
+				saveTxsq(request, response);
+			}
+			
+			if ("queryQuestion".equals(action)) {// 查询问题库
+				queryQuestion(request, response);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -121,8 +121,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException 
 	 */
 	private void saveTxsq(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String openid = (String) request.getSession().getAttribute("openid");
-//		String openid = "ogERitxuk4ZdrarMsawe1dadewNf8";
+//		String openid = (String) request.getSession().getAttribute("openid");
+		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			String je = request.getParameter("je");
@@ -201,8 +201,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException 
 	 */
 	private void queryTxmx(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String openid = (String) request.getSession().getAttribute("openid");
-//		String openid = "ogERitxuk4ZdrarMsawe1dadewNf8";
+//		String openid = (String) request.getSession().getAttribute("openid");
+		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Session session = HibernateSessionFactory.getSession();
@@ -239,8 +239,8 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 * @throws IOException
 	 */
 	private void querySrxx(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String openid = (String) request.getSession().getAttribute("openid");
-//		String openid = "ogERitxuk4ZdrarMsawe1dadewNf8";
+//		String openid = (String) request.getSession().getAttribute("openid");
+		String openid = "123";
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Session session = HibernateSessionFactory.getSession();
@@ -434,6 +434,10 @@ public class UserServlet extends HttpServlet implements Servlet {
 	 */
 	private void init(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String openid = (String) request.getSession().getAttribute("openid");
+		String qds = request.getParameter("qds");
+		if(qds == null || "".equals(qds)){
+			qds =  (String) request.getSession().getAttribute("qds");
+		}
 		if (openid != null && !"".equals(openid)) {
 			try {
 				Session session = HibernateSessionFactory.getSession();
@@ -444,9 +448,9 @@ public class UserServlet extends HttpServlet implements Servlet {
 				List<Map<String, String>> list = query.list();
 				if (list != null && list.size() > 0) {
 					Map map = (Map) list.get(0);
-					response.sendRedirect("pages/partner.html");
+					response.sendRedirect("pages/partner.html?qds="+qds);
 				} else {
-					response.sendRedirect("pages/register.html");// 注册页
+					response.sendRedirect("pages/register.html?qds="+qds);// 注册页
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -454,7 +458,7 @@ public class UserServlet extends HttpServlet implements Servlet {
 				HibernateSessionFactory.closeSession();
 			}
 		} else {// 跳转注册
-			response.sendRedirect("pages/register.html");// 注册页
+			response.sendRedirect("pages/register.html?qds="+qds);// 注册页
 		}
 
 	}
