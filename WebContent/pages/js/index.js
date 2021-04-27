@@ -94,7 +94,7 @@ app.config(function($routeProvider) {
 
 	$routeProvider.
 	when('/loan', {
-		templateUrl: 'components/bar_index.html',
+		templateUrl: 'components/bar_index_v1.html',
 		controller: 'indexController'
 	}).
 	when('/spread', {
