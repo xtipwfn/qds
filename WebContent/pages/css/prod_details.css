@@ -50,10 +50,10 @@ canvas {
         flex-grow: 4;
         width: 0; }
       .infoBox .pro_intro .flex-box .flex-item-fl {
-        flex-grow: 2;
+        flex-grow: 3;
         width: 0; }
       .infoBox .pro_intro .flex-box .flex-item-js {
-        flex-grow: 4;
+        flex-grow: 2;
         width: 0; }
       .infoBox .pro_intro .flex-box .red {
         color: #E9301C; }
