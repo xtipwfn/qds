@@ -68,7 +68,7 @@ app.controller('controller',function($scope){
 	
 	//信贷服务推广
 	$('#ljsq').click(function(){
-		window.location.href = baseUrl + 'IndexServlet';
+		window.location.href = baseUrl + 'index?qds='+qds;
 	});
 	
 });
