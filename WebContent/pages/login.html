@@ -100,14 +100,12 @@
 					}
 				})
 			})
-		</script>
-
-		<!--短信验证码-->
-		<script>
+			
 			var phoneReg = /(^1[3|4|5|7|8|9]\d{9}$)|(^09\d{8}$)/; //手机号正则
 			var count = 180; //间隔函数，1秒执行
 			var InterValObj; //timer变量，控制时间
 			var curCount; //当前剩余秒数
+			
 			/*第一*/
 			function sendMessage() {
 				curCount = count;

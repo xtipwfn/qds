@@ -103,6 +103,7 @@
 		</div>
 	</body>
 	<script>
+		var qds =localStorage.getItem('qds');
 		var phoneReg = /(^1[3|4|5|7|8|9]\d{9}$)|(^09\d{8}$)/; //手机号正则
 		var count = 180; //间隔函数，1秒执行
 		var InterValObj; //timer变量，控制时间
@@ -121,7 +122,8 @@
 				type: 'POST',
 				data: {
 					action: 'sendCode',
-					phone: $.trim($('#tel').val())
+					phone: $.trim($('#tel').val()),
+					qds:qds
 				},
 				url: baseUrl + 'RegisterServlet',
 				dataType: 'json',
